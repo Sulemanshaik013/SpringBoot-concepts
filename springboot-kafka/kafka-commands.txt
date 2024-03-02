@@ -1,0 +1,14 @@
+Start the kafka environment:
+	1. Start the zookeeper service
+		-> D:\Softwares\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+	2. Start the kafka service
+		-> D:\Softwares\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+	2. Create a topic to store the events
+		-> D:\Softwares\kafka>.\bin\windows\kafka-topics.bat --create --topic topic_name --bootstrap-server localhost:9092
+	3. Describe the topic 
+		-> D:\Softwares\kafka>.\bin\windows\kafka-topics.bat --describe --topic topic_name --bootstrap-server localhost:9092
+	4. Producer: write events to the topic
+		-> D:\Softwares\kafka>.\bin\windows\kafka-console-producer.bat --topic topic_demo --bootstrap-server localhost:9092
+	5. Consumer: read events from the topic
+		-> D:\Softwares\kafka>.\bin\windows\kafka-console-consumer.bat --topic topic_demo --from-beginning --bootstrap-server localhost:9092
+		-> D:\Softwares\kafka>.\bin\windows\kafka-console-consumer.bat --topic topic_demo --bootstrap-server localhost:9092
